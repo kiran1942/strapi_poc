@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anouncements",
+  "info": {
+    "singularName": "anouncement",
+    "pluralName": "anouncements",
+    "displayName": "Anouncement"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hub_news": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hub-new.hub-new",
+      "inversedBy": "pages"
+    }
+  }
+}

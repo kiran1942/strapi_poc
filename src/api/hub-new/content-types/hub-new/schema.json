@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hub_news",
+  "info": {
+    "singularName": "hub-new",
+    "pluralName": "hub-news",
+    "displayName": "Hub News",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Pictures": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "hub_news"
+    },
+    "Highlights": {
+      "type": "text"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::anouncement.anouncement",
+      "mappedBy": "hub_news"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
+    }
+  }
+}
